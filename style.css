@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --col1: #FCF7F8;
+    --col2: #068D9D;
+    --col3: #53D8FB;
+    --col4: #F05D5E;
+    --col5: #404E5C;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--col1);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--col5);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    position: relative;
+    background-image: url("background.jpg");
+    background-position: center center;
+    height: 20vh;
+    background-size: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 3vw;
+}
+
+.heading{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+}
+
+#main{
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 5vw;
+    max-width: 900px;
+    width: 100%;
+}
+
+.list-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--col2);
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.list-title i {
+    margin-right: 10px;
+    color: var(--col4);
+}
+
+.bucket-list {
+    list-style: none;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bucket-list li {
+    padding: 8px 15px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+}
+
+.bucket-list li:hover {
+    transform: translateX(10px);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.bucket-list li i {
+    margin-right: 12px;
+    color: var(--col3);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.bucket-list li:hover i {
+    transform: scale(1.2);
+    color: var(--col2);
+}
+
+footer {
+    background-color: var(--col5);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer h2 {
+    background-color: transparent;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 1.6rem;
+    }
+    
+    .list-title {
+        font-size: 1.2rem;
+    }
+    
+    .bucket-list li {
+        font-size: 0.9rem;
+    }
+    
+    .header {
+        height: 15vh;
+    }
+}
+
+/* For very small screens */
+@media (max-height: 600px) {
+    .header {
+        height: 15vh;
+    }
+    
+    .heading {
+        font-size: 1.5rem;
+    }
+    
+    .bucket-list li {
+        padding: 5px 10px;
+        margin-bottom: 4px;
+    }
+    
+    footer {
+        padding: 0.7rem;
+    }
+    
+    footer h2 {
+        font-size: 1rem;
+    }
+}
